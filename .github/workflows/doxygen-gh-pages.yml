@@ -1,14 +1,18 @@
-- name: Doxygen GitHub Pages Deploy Action
-  uses: DenverCoder1/doxygen-github-pages-action@v1.3.0
+name: Doxygen GitHub Pages Deploy Action
+
 on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: DenverCoder1/doxygen-github-pages-action@v1.3.0
+      - uses: actions/checkout@v2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: MAIN
+          folder: docs/html
+          config_file: Doxyfile
