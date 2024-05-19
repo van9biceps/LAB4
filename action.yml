@@ -10,7 +10,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: van9biceps/LAB4@v1.0.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: main
