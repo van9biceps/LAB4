@@ -1,7 +1,6 @@
 - name: Doxygen GitHub Pages Deploy Action
   uses: DenverCoder1/doxygen-github-pages-action@v1.3.0
 
-
 on:
   push:
     branches:
