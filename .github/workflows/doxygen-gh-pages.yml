@@ -4,16 +4,11 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: DenverCoder1/doxygen-github-pages-action@v1.3.0
         with:
-          repository: LAB4
-          token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
-          folder: docs/html
-          config_file: Doxyfile
+          github_token: ${{ secrets.GITHUB_TOKEN }}
