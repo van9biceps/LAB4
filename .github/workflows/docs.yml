@@ -10,7 +10,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: .github/workflows/docs.yml
+      - uses: van9biceps/LAB4@docs.yml
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: main
