@@ -16,7 +16,7 @@ jobs:
           submodules: "true"
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4.6.1
+        uses: actions/github-pages-deploy-action@v4.6.1
         with:
           github_token: ${{ inputs.github_token }}
           branch: main
