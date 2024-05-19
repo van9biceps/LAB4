@@ -1,18 +1,20 @@
-name: Doxygen GitHub Pages Deploy Action
+name: Publish Doxygen Documentation
 
 on:
   push:
     branches:
-      - main
-  workflow_dispatch:
+      - main  # Укажите здесь вашу основную ветку
 
 jobs:
-  deploy:
+  publish_doxygen:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: MAIN
-          folder: docs/html
-          config_file: Doxyfile
+          publish_dir: docs/html
